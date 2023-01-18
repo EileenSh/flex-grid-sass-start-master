@@ -1,0 +1,89 @@
+/*
+this styles every element on the page to include padig and
+border measurement when calculating the width and heights of elements.
+
+normally, the actual width of element is calculated like so:
+actual width = width property + padding property + border property
+
+now, because we set box-sizing to border box, the width of the whole element is going to be
+the width that we state as part of the width property for an element.
+ actual width = width property = content width + padding + border
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+this styles the nav to have no padding inside the navigation bar.
+*/
+nav {
+  padding: 0;
+}
+
+nav ul {
+  /*
+  this styles the navigation's unordereed list to be a flexbox container.
+  flexbox containrs typically help with designing responsive web pages.
+  */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  /*
+  this allows our flex itmes to wrap to the next line when we run out of space.
+  */
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  /*
+  this allows the flex container to display items vertically (column) as opposed to
+  horizontlly (row), which is the default
+  */
+  /*
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  */
+
+  /*
+  the justify-content property allows us to align items in the same direction
+  that the flex container is displaying our items in.
+
+  so, for a horizontal layout,it allows us to align items horizontally.
+  for a vertical layout, it allows us to align items vertically.
+
+  values for justify-content include;
+  lex-start - align the items to the start of the container
+  flex-end - align the items to the end  of the container
+  center - align the items to the center of the container
+  space-between - puts space between each item in the container, but does not add space to 
+      the left of the first item or the ight of the last item.
+  space-around - put space around each item n the container.
+  */
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -moz-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+/*
+this styles the anchors nside the navigation ar to fill the width and the height of the list items they are inside.
+*/
+
+nav ul li a {
+  width: 100%;
+  height: 100%;
+
+  padding: 1vw;
+}
